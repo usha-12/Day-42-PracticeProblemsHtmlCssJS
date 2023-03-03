@@ -22,6 +22,7 @@
         <div>
             <label for="email">Email input type: </label>
             <input type="email" id="email" name="email">
+            <error-output class="email-error" for="email"></error-output>
         </div>
         <div>
             <label for="url">Url input type: </label>
@@ -76,22 +77,6 @@
         output.textContent = salary.value;
         salary.addEventListener('input',function(){
             output.textContent = salary.value;
-        });
-        const tel = document.querySelector('#tel');
-        const telError = document.querySelector('.tel-error');
-        tel.addEventListener('input', function(){
-            let telRegex = RegExp('^[\d]{2}\s[\d]{9}$');
-            if(telRegex.test(tel.value)) 
-            telError.textContent("");
-            else telError.textContent = "tel is Incorrect";
-        });
-        const pwd = document.querySelector('#pwd');
-        const pwdError = document.querySelector('.pwd-error');
-        pwd.addEventListener('input', function(){
-            let pwdRegex = RegExp('[(?=.*[A-Z])(?=.*[^\\w\\d\\s:])(?=.*[0-9])[\\S]{8,}');
-            if(pwdRegex.test(pwd.value)) 
-            pwdError.textContent("");
-            else pwdError.textContent = "password is Incorrect";
         });
     </script>
 </body>
