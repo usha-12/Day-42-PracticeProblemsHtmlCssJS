@@ -35,6 +35,7 @@
         <div>
             <label for="tel">Tel input type: </label>
             <input type="tel" id="tel" name="tel">
+            <error-output class="tel-error" for="tel"></error-output>
         </div>
         <div>
             <label for="search">Search input type: </label>
@@ -77,6 +78,14 @@
         output.textContent = salary.value;
         salary.addEventListener('input',function(){
             output.textContent = salary.value;
+        });
+        const tel = document.querySelector('#tel');
+        const telError = document.querySelector('.tel-error');
+        tel.addEventListener('input', function(){
+            let telRegex = RegExp('^[\d]{2}\s[\d]{9}$');
+            if(telRegex.test(tel.value)) 
+            telError.textContent("");
+            else telError.textContent = "tel is Incorrect";
         });
     </script>
 </body>
