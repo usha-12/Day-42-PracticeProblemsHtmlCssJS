@@ -9,6 +9,7 @@ body{
     padding: 2em;
 }
 
+
 .headerContainer{
     display: flex;
     flex-flow: column wrap;
@@ -64,5 +65,5 @@ error-output{
         width: 30%;
         font-size: 12px;
     }
-    
+
 }
